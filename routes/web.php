@@ -18,8 +18,9 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::get('/user', [UserController::class, 'index']);
-Route::post('/saveData', [UserController::class,'saveData']);
+Route::get('/', [UserController::class, 'index']);
+Route::get('/users', [UserController::class,'getUsers'])->name('users');
+Route::post('/users', [UserController::class,'saveData'])->name('users.store');
 // Route::post('/saveData', function(){
 //     [UserController::class, 'saveData'];
 // });
